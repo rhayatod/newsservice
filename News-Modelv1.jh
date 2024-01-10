@@ -1,0 +1,70 @@
+entity Article {
+  slug String
+  title String
+  shortDescription String
+  imageURL String
+  content TextBlob
+  author String 
+  externalAuthor String
+  externalSource String
+  createdDate Instant
+  publishDate Instant
+  publishUser String
+  posted Boolean
+  status ArticleStatus
+  lang LanguageOption 
+}
+
+enum ArticleStatus {
+  DRAFT, POSTED, PUBLISHED, DELETED
+}
+
+enum LanguageOption {
+  ID, EN
+}
+
+entity Category {
+  name String
+}
+
+relationship OneToMany {
+  Article{publishingQueues} to ArticleQueue{article},
+  Article{headlineSettings} to Headline{article},
+}
+
+relationship ManyToMany {
+  Article{tags} to ArticleTag
+}
+
+relationship ManyToOne {
+  Article{category} to Category,
+  Category{parent} to Category,
+  Headline{category} to Category
+}
+
+entity ArticleTag{
+  tag String
+}
+
+entity ArticleQueue {
+  publishDate Instant
+  publishUser String
+  status QueueStatus
+}
+
+enum QueueStatus {
+  WAIT, RUN, WAIT_RERUN, DELETED
+}
+
+entity Headline {
+  isGlobal Boolean
+  startDate Instant
+  toDate Instant
+  Position Integer
+  
+}
+
+dto * with mapstruct
+service * with serviceImpl
+paginate * with pagination
+filter *

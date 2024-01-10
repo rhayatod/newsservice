@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Article.
+    -->
+    <changeSet id="20190410103136-1" author="jhipster">
+        <createTable tableName="article">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="slug" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="title" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="short_description" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="image_url" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="content" type="clob">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="author" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="external_author" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="external_source" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="created_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="publish_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="publish_user" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="posted" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="status" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="lang" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="category_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="article" columnName="created_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="article" columnName="publish_date" columnDataType="datetime"/>
+        
+        <createTable tableName="article_tags">
+            <column name="tags_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="article_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="article_id, tags_id" tableName="article_tags"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

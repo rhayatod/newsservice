@@ -1,0 +1,44 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.investasikita.news",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "5.8.2",
+    "applicationType": "microservice",
+    "baseName": "NewsService",
+    "packageName": "com.investasikita.news",
+    "packageFolder": "com/investasikita/news",
+    "serverPort": "8093",
+    "authenticationType": "uaa",
+    "uaaBaseName": "UAAService",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": "elasticsearch",
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NTE0MjY3OTlkZDVhMTBjZThjOTU3MmVmNjU1ZDlkODQ2NzUxYzQ3NjE4MmJmOTE3ZjA5NThmZjU3M2VkYTI4NTg3NjIwOGE1ZDI3MjgyYjdlYzMwZDg5NjA4YzgwMzk0ZjZhNDdjZmVmMmYyMTAzMDJjYzU5N2JjYTBlM2QxMTU=",
+    "enableTranslation": true,
+    "languages": [
+      "en",
+      "id"
+    ],
+    "testFrameworks": [
+      "gatling"
+    ],
+    "jhiPrefix": "jhi",
+    "clientPackageManager": "npm",
+    "nativeLanguage": "en",
+    "skipClient": true,
+    "skipUserManagement": true,
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": []
+  }
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190410103136_added_entity_Article.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190410103137_added_entity_Category.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190410103138_added_entity_ArticleTag.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190410103139_added_entity_ArticleQueue.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190410103140_added_entity_Headline.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20190410103136_added_entity_constraints_Article.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190410103137_added_entity_constraints_Category.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190410103139_added_entity_constraints_ArticleQueue.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190410103140_added_entity_constraints_Headline.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190502122000_added_column_isHeadline_article.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190528135000_added_column_imageFileName_article.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191010210000_added_column_externalSourceImage_article.xml" relativeToChangelogFile="false"/>
+
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>
